@@ -12,7 +12,7 @@
 /**
  * Tests constructor for PID controller.
  */
-TEST(PIDTest, constructor) {
+TEST(PIDTest, testPIDConstructor) {
   PID pid = PID(1, 2, 3, 4, 5);
 
   EXPECT_DOUBLE_EQ(1, pid.getKp());
@@ -25,7 +25,7 @@ TEST(PIDTest, constructor) {
 /**
  * Tests the proportional control part of the PID controller independently.
  */
-TEST(PIDTest, compute_proportional) {
+TEST(PIDTest, testPIDComputeProportional) {
   PID pid = PID(2, 0, 0, 1, 0);
 
   pid.compute(1);
@@ -38,7 +38,7 @@ TEST(PIDTest, compute_proportional) {
 /**
  * Tests the integral control part of the PID controller independently.
  */
-TEST(PIDTest, compute_integral) {
+TEST(PIDTest, testPIDComputeIntegral) {
   PID pid = PID(0, 2, 0, 1, 0);
 
   pid.compute(1);
@@ -51,7 +51,7 @@ TEST(PIDTest, compute_integral) {
 /**
  * Tests the derivative control part of the PID controller independently.
  */
-TEST(PIDTest, compute_derivative) {
+TEST(PIDTest, testPIDComputeDerivative) {
   PID pid = PID(0, 0, 2, 1, 0);
 
   pid.compute(1);
