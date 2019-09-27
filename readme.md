@@ -9,6 +9,10 @@ Part 1:
 Ryan Cunningham - Driver
 Pablo Sanhueza - Navigator
 
+Part 2:
+Varun Asthana - Driver
+Aman Virmani - Navigator
+
 Implementation of a PID Controller (https://en.wikipedia.org/wiki/PID_controller).
 
 ## Standard install via command-line
