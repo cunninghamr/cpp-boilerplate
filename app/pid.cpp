@@ -1,36 +1,52 @@
 /**
  * @author Ryan Cunningham
  * @author Pablo Sanhueza
+ * @author Varun Asthana
+ * @author Aman Virmani
+ *
  * @file pid.cpp
  * @brief Implementation of a PID Controller
- * @copyright 2019
+ *
+ * Copyright [2019] Group12
  */
 
 #include "pid.hpp"
 
-PID::PID(double kp, double ki, double kd, double dt, double setpoint) {
+PID::PID(double kp1, double ki1, double kd1, double dt1, double setPoint1) {
+  kp = kp1;
+  ki = ki1;
+  kd = kd1;
+  setPoint = setPoint1;
+  dt = dt1;
+  integral = 0;
+  previousError = 0;
 }
 
 double PID::getKp() {
-  return -1;
+  return kp;
 }
 
 double PID::getKi() {
-  return -1;
+  return ki;
 }
 
 double PID::getKd() {
-  return -1;
+  return kd;
 }
 
 double PID::getDt() {
-  return -1;
+  return dt;
 }
 
-double PID::getSetpoint() {
-  return -1;
+double PID::getSetPoint() {
+  return setPoint;
 }
 
 double PID::compute(double processVariable) {
-  return -1;
+  double u;
+  double error = setPoint - processVariable;
+  integral += error * dt;
+  u = (error * kp) + (kd * (error - previousError) / dt) + (ki * integral);
+  previousError = error;
+  return u;
 }

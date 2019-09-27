@@ -1,9 +1,13 @@
 /**
  * @author Ryan Cunningham
  * @author Pablo Sanhueza
+ * @author Varun Asthana
+ * @author Aman Virmani
+ *
  * @file pid_test.cpp
  * @brief Unit Tests for PID Controller
- * @copyright 2019
+ *
+ * Copyright [2019] Group12
  */
 
 #include <gtest/gtest.h>
@@ -19,7 +23,7 @@ TEST(PIDTest, testPIDConstructor) {
   EXPECT_DOUBLE_EQ(2, pid.getKi());
   EXPECT_DOUBLE_EQ(3, pid.getKd());
   EXPECT_DOUBLE_EQ(4, pid.getDt());
-  EXPECT_DOUBLE_EQ(5, pid.getSetpoint());
+  EXPECT_DOUBLE_EQ(5, pid.getSetPoint());
 }
 
 /**
